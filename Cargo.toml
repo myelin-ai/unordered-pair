@@ -1,10 +1,12 @@
 [package]
-name = "myelin-pair"
+name = "unordered-pair"
+description = "A tuple struct representing an unordered pair"
 version = "0.1.0"
 authors = [
-    "Jan Nils Ferner <jan@myelin.ch>",
-    "Mathias Fischler <mathias@myelin.ch>",
-    "Ruben Schmidmeister <ruben@myelin.ch>",
     "Jeremy Stucki <jeremy@myelin.ch>",
+    "Ruben Schmidmeister <ruben@myelin.ch>",
 ]
+license = "MIT/Apache-2.0"
+repository = "https://github.com/myelin-ai/pair"
+homepage = "https://github.com/myelin-ai/pair"
 edition = "2018"
