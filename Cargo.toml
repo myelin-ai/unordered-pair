@@ -1,7 +1,7 @@
 [package]
 name = "unordered-pair"
 description = "A tuple struct representing an unordered pair"
-version = "0.1.0"
+version = "0.1.1"
 authors = [
     "Jeremy Stucki <jeremy@myelin.ch>",
     "Ruben Schmidmeister <ruben@myelin.ch>",
@@ -10,4 +10,5 @@ license = "MIT/Apache-2.0"
 readme = "readme.md"
 repository = "https://github.com/myelin-ai/unordered-pair"
 homepage = "https://github.com/myelin-ai/unordered-pair"
+documentation = "https://docs.rs/unordered-pair"
 edition = "2018"
