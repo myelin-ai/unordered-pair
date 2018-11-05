@@ -1,0 +1,7 @@
+sudo: false
+dist: trusty
+language: rust
+
+script:
+- cargo build
+- cargo test
