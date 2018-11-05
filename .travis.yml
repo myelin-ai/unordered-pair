@@ -2,6 +2,15 @@ sudo: false
 dist: trusty
 language: rust
 
+rust:
+- nightly
+
+install:
+- rustup component add clippy-preview
+- rustup component add rustfmt-preview
+
 script:
 - cargo build
 - cargo test
+- cargo clippy -- -Dwarnings
+- cargo fmt --all -- --check
