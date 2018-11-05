@@ -8,6 +8,6 @@ authors = [
 ]
 license = "MIT/Apache-2.0"
 readme = "readme.md"
-repository = "https://github.com/myelin-ai/pair"
-homepage = "https://github.com/myelin-ai/pair"
+repository = "https://github.com/myelin-ai/unordered-pair"
+homepage = "https://github.com/myelin-ai/unordered-pair"
 edition = "2018"
