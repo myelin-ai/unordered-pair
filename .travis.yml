@@ -1,13 +1,16 @@
-sudo: false
 dist: trusty
 language: rust
 
 rust:
+- stable
 - nightly
 
+matrix:
+  allow_failures:
+  - rust: nightly
+
 install:
-- rustup component add clippy-preview
-- rustup component add rustfmt-preview
+- rustup component add clippy rustfmt
 
 script:
 - cargo build
