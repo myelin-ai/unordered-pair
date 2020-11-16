@@ -12,3 +12,6 @@ repository = "https://github.com/myelin-ai/unordered-pair"
 homepage = "https://github.com/myelin-ai/unordered-pair"
 documentation = "https://docs.rs/unordered-pair"
 edition = "2018"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }

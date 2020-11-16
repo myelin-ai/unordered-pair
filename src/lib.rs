@@ -11,8 +11,10 @@
 use std::cmp::Ordering;
 use std::hash::{Hash, Hasher};
 
+use serde::{Serialize, Deserialize};
+
 /// A tuple struct representing an unordered pair
-#[derive(Debug, Copy, Clone, Eq)]
+#[derive(Debug, Copy, Clone, Eq, Serialize, Deserialize)]
 pub struct UnorderedPair<T>(pub T, pub T);
 
 impl<T> From<(T, T)> for UnorderedPair<T> {
