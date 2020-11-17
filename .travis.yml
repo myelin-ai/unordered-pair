@@ -13,7 +13,7 @@ install:
 - rustup component add clippy rustfmt
 
 script:
-- cargo build
-- cargo test
-- cargo clippy -- -Dwarnings
-- cargo fmt --all -- --check
+- cargo build --all-features
+- cargo test --all-features
+- cargo clippy --all-features -- -Dwarnings
+- cargo fmt --all --all-features -- --check

@@ -8,13 +8,14 @@
     clippy::unimplemented
 )]
 
+#[cfg(feature = "serde")]
+use serde::{Deserialize, Serialize};
 use std::cmp::Ordering;
 use std::hash::{Hash, Hasher};
 
-use serde::{Serialize, Deserialize};
-
 /// A tuple struct representing an unordered pair
-#[derive(Debug, Copy, Clone, Eq, Serialize, Deserialize)]
+#[derive(Debug, Copy, Clone, Eq)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub struct UnorderedPair<T>(pub T, pub T);
 
 impl<T> From<(T, T)> for UnorderedPair<T> {
