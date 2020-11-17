@@ -1,4 +1,6 @@
 //! This crate provides a tuple struct for an unordered pair
+//! ## Crate Features
+//! - `serde`: Enables serde support for [`UnorderedPair`].
 
 #![deny(
     rust_2018_idioms,
