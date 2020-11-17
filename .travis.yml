@@ -16,4 +16,4 @@ script:
 - cargo build --all-features
 - cargo test --all-features
 - cargo clippy --all-features -- -Dwarnings
-- cargo fmt --all --all-features -- --check
+- cargo fmt --all -- --check
