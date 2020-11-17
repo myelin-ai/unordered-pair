@@ -15,3 +15,5 @@
 ## 0.2.2
 - Derive Copy
 
+## 0.2.3
+- Add support for Serialization/Deserialization using serde.
