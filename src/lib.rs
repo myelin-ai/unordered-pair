@@ -1,4 +1,6 @@
 //! This crate provides a tuple struct for an unordered pair
+//! ## Crate Features
+//! - `serde`: Enables serde support for [`UnorderedPair`].
 
 #![deny(
     rust_2018_idioms,
@@ -13,6 +15,7 @@ use std::hash::{Hash, Hasher};
 
 /// A tuple struct representing an unordered pair
 #[derive(Debug, Copy, Clone, Eq)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct UnorderedPair<T>(pub T, pub T);
 
 impl<T> From<(T, T)> for UnorderedPair<T> {
