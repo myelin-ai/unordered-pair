@@ -64,6 +64,36 @@ where
     }
 }
 
+impl<T> IntoIterator for UnorderedPair<T> {
+    type Item = T;
+
+    type IntoIter = std::array::IntoIter<T, 2>;
+
+    fn into_iter(self) -> Self::IntoIter {
+        IntoIterator::into_iter([self.0, self.1])
+    }
+}
+
+impl<'a, T> IntoIterator for &'a UnorderedPair<T> {
+    type Item = &'a T;
+
+    type IntoIter = std::array::IntoIter<&'a T, 2>;
+
+    fn into_iter(self) -> Self::IntoIter {
+        IntoIterator::into_iter([&self.0, &self.1])
+    }
+}
+
+impl<'a, T> IntoIterator for &'a mut UnorderedPair<T> {
+    type Item = &'a mut T;
+
+    type IntoIter = std::array::IntoIter<&'a mut T, 2>;
+
+    fn into_iter(self) -> Self::IntoIter {
+        IntoIterator::into_iter([&mut self.0, &mut self.1])
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
