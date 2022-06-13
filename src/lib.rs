@@ -63,3 +63,50 @@ where
         }
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn partial_eq_different_internal_order() {
+        let pair = UnorderedPair(5, 7);
+        let rev = UnorderedPair(7, 5);
+        assert_eq!(pair, rev);
+    }
+
+    #[test]
+    fn partial_eq_same_internal_order() {
+        let pair1 = UnorderedPair(5, 7);
+        let pair2 = UnorderedPair(5, 7);
+        assert_eq!(pair1, pair2);
+    }
+
+    #[test]
+    fn partial_eq_nan() {
+        let pair1 = UnorderedPair(f32::NAN, 1.3);
+        let pair2 = UnorderedPair(1.3, f32::NAN);
+        assert_ne!(pair1, pair2);
+    }
+
+    #[test]
+    fn hash_different_internal_order() {
+        use std::collections::hash_map::DefaultHasher as Hasher;
+
+        let hash_pair = {
+            let pair = UnorderedPair(5, 7);
+            let mut hasher = Hasher::new();
+            pair.hash(&mut hasher);
+            hasher.finish()
+        };
+
+        let hash_rev = {
+            let pair = UnorderedPair(7, 5);
+            let mut hasher = Hasher::new();
+            pair.hash(&mut hasher);
+            hasher.finish()
+        };
+
+        assert_eq!(hash_rev, hash_pair);
+    }
+}
