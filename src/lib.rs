@@ -24,9 +24,9 @@ impl<T> From<(T, T)> for UnorderedPair<T> {
     }
 }
 
-impl<T> Into<(T, T)> for UnorderedPair<T> {
-    fn into(self) -> (T, T) {
-        (self.0, self.1)
+impl<T> From<UnorderedPair<T>> for (T, T) {
+    fn from(pair: UnorderedPair<T>) -> (T, T) {
+        (pair.0, pair.1)
     }
 }
 
