@@ -14,7 +14,7 @@ use std::cmp::Ordering;
 use std::hash::{Hash, Hasher};
 
 /// A tuple struct representing an unordered pair
-#[derive(Debug, Copy, Clone, Eq)]
+#[derive(Debug, Copy, Clone, Eq, Default)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct UnorderedPair<T>(pub T, pub T);
 
