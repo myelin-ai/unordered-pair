@@ -18,6 +18,34 @@ use std::hash::{Hash, Hasher};
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct UnorderedPair<T>(pub T, pub T);
 
+impl<T: Ord> UnorderedPair<T> {
+    /// Transforms the `UnorderedPair<T>` into a `(T,T)`.
+    /// The tuple's components are always in the same order, smallest to largest.
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// use unordered_pair::UnorderedPair;
+    ///
+    /// let pair = UnorderedPair(1,2);
+    /// let rev = UnorderedPair(2,1);
+    ///
+    /// let tuple_pair = pair.into_ordered_tuple();
+    /// let tuple_rev = rev.into_ordered_tuple();
+    ///
+    /// assert_eq!(tuple_pair, (1,2));
+    /// assert_eq!(tuple_rev, (1,2));
+    /// ```
+    pub fn into_ordered_tuple(self) -> (T, T) {
+        let UnorderedPair(first, second) = self;
+
+        match first.cmp(&second) {
+            Ordering::Greater => (second, first),
+            _ => (first, second),
+        }
+    }
+}
+
 impl<T> From<(T, T)> for UnorderedPair<T> {
     fn from(tuple: (T, T)) -> UnorderedPair<T> {
         UnorderedPair(tuple.0, tuple.1)
