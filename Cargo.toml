@@ -1,7 +1,7 @@
 [package]
 name = "unordered-pair"
 description = "A tuple struct representing an unordered pair"
-version = "0.2.3"
+version = "0.2.4"
 authors = [
     "Jeremy Stucki <jeremy@myelin.ch>",
     "Ruben Schmidmeister <ruben@myelin.ch>",
