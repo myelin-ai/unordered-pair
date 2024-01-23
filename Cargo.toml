@@ -4,14 +4,14 @@ description = "A tuple struct representing an unordered pair"
 version = "0.2.4"
 authors = [
     "Jeremy Stucki <jeremy@myelin.ch>",
-    "Ruben Schmidmeister <ruben@myelin.ch>",
+    "Tau <git@tau.garden>",
 ]
 license = "MIT/Apache-2.0"
 readme = "readme.md"
 repository = "https://github.com/myelin-ai/unordered-pair"
 homepage = "https://github.com/myelin-ai/unordered-pair"
 documentation = "https://docs.rs/unordered-pair"
-edition = "2018"
+edition = "2021"
 
 [dependencies]
 serde = { version = "1.0", optional = true, features = ["derive"] }
