@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.5
+* Updated crate metadata and declare maintenance status.
+
 ## 0.2.4
 - Add `into_ordered_tuple`.
 - Derive `Default`.
