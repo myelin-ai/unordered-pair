@@ -17,5 +17,8 @@ keywords = ["tuple", "pair", "unordered"]
 [dependencies]
 serde = { version = "1.0", optional = true, features = ["derive"] }
 
+[badges.maintenance]
+status = "passively-maintained"
+
 [package.metadata.docs.rs]
 all-features = true
