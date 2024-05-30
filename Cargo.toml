@@ -13,6 +13,7 @@ documentation = "https://docs.rs/unordered-pair"
 edition = "2021"
 categories = ["data-structures"]
 keywords = ["tuple", "pair", "unordered"]
+exclude = [".github/", ".mailmap", ".gitignore"]
 
 [dependencies]
 serde = { version = "1.0", optional = true, features = ["derive"] }
