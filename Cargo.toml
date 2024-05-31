@@ -1,20 +1,25 @@
 [package]
 name = "unordered-pair"
 description = "A tuple struct representing an unordered pair"
-version = "0.2.4"
+version = "0.2.5"
 authors = [
     "Jeremy Stucki <jeremy@myelin.ch>",
-    "Tau <git@tau.garden>",
+    "Tau Gärtli <git@tau.garden>",
 ]
-license = "MIT/Apache-2.0"
+license = "MIT OR Apache-2.0"
 readme = "readme.md"
 repository = "https://github.com/myelin-ai/unordered-pair"
-homepage = "https://github.com/myelin-ai/unordered-pair"
 documentation = "https://docs.rs/unordered-pair"
 edition = "2021"
+categories = ["data-structures"]
+keywords = ["tuple", "pair", "unordered"]
+exclude = [".github/", ".mailmap", ".gitignore"]
 
 [dependencies]
 serde = { version = "1.0", optional = true, features = ["derive"] }
+
+[badges.maintenance]
+status = "passively-maintained"
 
 [package.metadata.docs.rs]
 all-features = true
